@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <NavbarApp></NavbarApp>
+    <div class="spacer-block"></div>
+    <CharacterCard></CharacterCard>
   </div>
 </template>
+
+<script>
+import NavbarApp from './components/NavbarApp.vue'
+import CharacterCard from './components/CharacterCard.vue'
+
+export default {
+  name: 'App',
+  components: { CharacterCard, NavbarApp },
+  data: () => ({})
+}
+</script>
 
 <style>
 #app {
@@ -17,16 +26,7 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.spacer-block {
+  height: 20px;
 }
 </style>
